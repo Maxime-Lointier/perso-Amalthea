@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/generateur.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/html2canvas.min.js"></script>
+</head>
+<body>
+    <nav id="header">
+        <div class="nav-items">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="generateur.html">Produit</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-profile">
+            <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+            <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+        </div>
+    </nav>
+
+    <div class="container label-generator">
+        <h1>Générateur d'Étiquettes</h1>
+        
+        <div class="label-layout">
+            <div class="preview-section">
+                <h2>Prévisualisation de l'Étiquette</h2>
+                <div id="labelPreview" class="label-preview">
+                    <div id="labelContent" class="label-content"></div>
+                </div>
+                <div id="labelActions" class="label-actions">
+                    <div class="quantity-container">
+                        <label for="quantity">Quantité:</label>
+                        <input type="number" id="quantity" min="1" value="1" class="quantity-input">
+                        <button id="addToCartBtn" class="generate-btn">Ajouter au Panier</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>Personnalisation de l'Étiquette</h2>
+                <form id="labelForm" enctype="multipart/form-data">
+                    <div class="form-group dimension-group">
+                        <label for="labelDimension">Dimensions de l'Étiquette</label>
+                        <div class="dimension-container">
+                            <select id="labelDimension" class="form-control">
+                                <option value="60x50">60 x 50 mm</option>
+                                <option value="50x40">50 x 40 mm</option>
+                                <option value="40x30">40 x 30 mm</option>
+                                <option value="50x20">50 x 20 mm</option>
+                            </select>
+                            <div class="labels-per-roll-badge">
+                                500 étiquettes/rouleau
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="warningBlock">Bloc d'Avertissement</label>
+                        <div class="warning-container">
+                            <select id="warningBlock" class="form-control">
+                                <option value="">Pas de bloc</option>
+                                <option value="NE PAS AVALER">NE PAS AVALER</option>
+                                <option value="NE PAS FAIRE AVALER">NE PAS FAIRE AVALER</option>
+                            </select>
+                            <select id="backgroundColorSelect" class="form-control">
+                                <option value="">Couleur de fond</option>
+                                <option value="">Blanc</option>
+                                <option value="blue">Bleu (60x50, 50x40, 40x30)</option>
+                                <option value="red">Rouge (60x50,50x40,40x30)</option>
+                                <option value="gold">Doré (50x20)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pharmacyLogo">Caducée de la pharmacie</label>
+                        <input type="file" id="pharmacyLogo" name="pharmacyLogo" accept="image/*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="pharmacyName" placeholder="Pharmacie Centrale">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="pharmacyAddress" placeholder="42 Av martin, Paris">
+                    </div>
+                  
+                    <div class="form-group">
+                        <input type="text" id="pharmacyPostal" placeholder="49300 CHOLET">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="pharmacyPhone" placeholder="01 45 67 89 01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="pharmacyFax" placeholder="champ n°6">
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="champLibre" placeholder="champ libre">
+                            <select id="champLibrePosition" class="form-control">
+                                <option value="top">Haut</option>
+                                <option value="middle">Milieu</option>
+                                <option value="bottom">Bas</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="text-container" style="
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        ">
+            <h3>Informations Importantes</h3>
+            <p>⚠️ Attention les caducée ne peuvent être imprimés qu'en noir</p>
+            <p>
+                Notre générateur d'étiquettes vous permet de créer des étiquettes personnalisées
+                avec différentes dimensions, utilisez des abréviations en cas d'adresse trop longue.
+                Choisissez vos dimensions, ajoutez votre caducée, et personnalisez le texte selon vos besoins. Tous les champs sont optionnels, mais veillez à créer une étiquette qui a du sens.
+            </p>
+            <ul>
+                <li>Personnalisation complète du texte</li>
+                <li>La couleur rouge ainsi que le bloc "NE PAS FAIRE AVALER" sont à destination des vétérinaires</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contactez-nous</h4>
+                <p> 01 23 45 67 89</p>
+                <p> contact@generateur-etiquettes.fr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informations Légales</h4>
+                <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </div>
+        
+    </footer>
+    <div id="login-popup-container"></div>
+    <script type="module" src="/js/generateur.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/login-popup.js"></script>
+    <script type="module" src="/js/header.js"></script>
+    <script type="module" src="/js/toast.js"></script>
+</body>
+</html>

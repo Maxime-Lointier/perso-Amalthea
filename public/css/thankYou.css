@@ -1,0 +1,52 @@
+/* public/css/thank-you.css */
+.thank-you-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.thank-you-section h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#order-status {
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#order-status.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#order-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#order-details {
+    margin: 30px 0;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}

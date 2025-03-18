@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav id="header">
+        <div class="nav-items">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="generateur.html">Produit</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-profile">
+            <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+            <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Inscription</h1>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="first-name">Prénom</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Nom</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contactez-nous</h4>
+                <p> 01 23 45 67 89</p>
+                <p> contact@generateur-etiquettes.fr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informations Légales</h4>
+                <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </div>
+        
+    </footer>
+    <div id="login-popup-container"></div>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/login-popup.js"></script>
+    <script type="module" src="/js/header.js"></script>
+    <script type="module" src="/js/register.js"></script>
+    <script type="module" src="/js/registerBtn.js"></script>
+    <script type="module" src="/js/toast.js"></script>
+</body>
+</html>

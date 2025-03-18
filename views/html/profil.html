@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/profil.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="pageContent" class="hidden">
+        <nav id="header">
+            <div class="nav-items">
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-profile">
+                <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+                <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+            </div>
+        </nav>
+        <div class="container profile">
+            <h1>Profil</h1>
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Informations Personnelles</h2>
+                    <form id="update-info-form">
+                        <div class="form-group">
+                            <label for="first_name">Prénom:</label>
+                            <input type="text" id="first_name" name="first_name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Nom:</label>
+                            <input type="text" id="last_name" name="last_name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" value="" placeholder="">
+                        </div>
+                        <button type="submit">Mettre à jour</button>
+                    </form>
+                </div>
+                <div class="profile-section">
+                    <h2>Changer le Mot de Passe</h2>
+                    <form id="change-password-form">
+                        <div class="form-group">
+                            <label for="old_password">Ancien Mot de Passe:</label>
+                            <input type="password" id="old_password" name="old_password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password">Nouveau Mot de Passe:</label>
+                            <input type="password" id="new_password" name="new_password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirmer le Nouveau Mot de Passe:</label>
+                            <input type="password" id="confirm_password" name="confirm_password">
+                        </div>
+                        <button type="submit">Changer le Mot de Passe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contactez-nous</h4>
+                    <p> 01 23 45 67 89</p>
+                    <p> contact@generateur-etiquettes.fr</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="accueil.html">Accueil</a></li>
+                        <li><a href="generateur.html">Produit</a></li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informations Légales</h4>
+                    <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                    <p>Tous droits réservés</p>
+                </div>
+            </div>
+        </footer>
+        <div id="login-popup-container"></div>
+        <script type="module" src="/js/token-interceptor.js"></script>
+        <script type="module" src="/js/protec.js"></script>
+        <script type="module" src="/js/profil.js"></script>
+        <script type="module" src="/js/auth.js"></script>
+        <script type="module" src="/js/login-popup.js"></script>
+        <script type="module" src="/js/header.js"></script>
+        <script type="module" src="/js/toast.js"></script>
+    </div>
+</body>
+
+</html>

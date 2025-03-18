@@ -1,0 +1,183 @@
+/* Styles specific to the shopping cart page */
+.cart-items {
+    margin-bottom: 20px;
+}
+
+/* Organisation des éléments du panier */
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-areas: 
+        "details preview actions";
+    gap: 15px;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Détails de l'article à gauche */
+.cart-item-details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style du bouton supprimer */
+.remove-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.remove-item:hover {
+    background-color: #c0392b;
+}
+
+.cart-summary {
+    text-align: right;
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.cart-total {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.quantity-container label {
+    margin-right: 5px;
+}
+
+/* Style du logo */
+.logo-container {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: inline-block;
+    max-width: 120px;
+}
+
+.pharmacy-logo {
+    max-width: 100px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* Conteneur central optimisé pour la prévisualisation */
+.item-preview-container {
+    grid-area: preview;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Amélioration du conteneur de prévisualisation pour s'adapter à la forme de l'image */
+.item-preview {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-flex; /* Change to inline-flex */
+    justify-content: center;
+    align-items: center;
+    max-height: 250px; /* Augmenter la hauteur maximale */
+}
+
+/* Prévisualisation plus grande et visible */
+.preview-thumbnail {
+    max-width: 100%;
+    max-height: 230px; /* Augmenter la hauteur maximale */
+    object-fit: contain;
+}
+
+/* Actions à droite */
+.item-actions {
+    grid-area: actions;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustements pour la vue mobile */
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "details"
+            "preview"
+            "actions";
+    }
+    
+    .logo-container {
+        text-align: center;
+        align-self: center;
+        margin-bottom: 10px;
+    }
+    
+    .item-preview {
+        max-height: 300px; /* Plus grand sur mobile */
+    }
+    
+    .preview-thumbnail {
+        max-height: 280px; /* Plus grand sur mobile */
+    }
+    
+    .item-actions {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+/* Style spécifique pour le checkout */
+.checkout .cart-item {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "details"
+        "preview"
+        "actions";
+    padding: 15px;
+}
+
+.checkout .item-preview-container {
+    margin: 15px 0;
+}
+
+.checkout .item-preview {
+    max-width: 100%;
+    max-height: 350px; /* Encore plus grand dans le checkout */
+}
+
+.checkout .preview-thumbnail {
+    max-height: 330px;
+}
+
+.checkout .logo-container {
+    text-align: center;
+}

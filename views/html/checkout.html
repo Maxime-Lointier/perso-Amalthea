@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div id="pageContent">
+        <nav id="header">
+            <div class="nav-items">
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-profile">
+                <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+                <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+            </div>
+        </nav>
+
+        <div class="container checkout">
+            <div class="checkout-forms">
+                <!-- Cette section n'est visible que pour les utilisateurs non connectés -->
+                <div class="form-section" id="login-form-2">
+                    <h1>Créer un Compte</h1>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="first-name">Prénom</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Nom</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmer le mot de passe</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                        </div>
+                        <button type="submit" id="register-btn" class="generate-btn">S'inscrire</button>
+                        <button type="button" id="switch-to-login" class="btn btn-link">Déjà un compte? Se connecter</button>
+                    </form>
+                </div>
+                
+                <!-- Cette section est toujours visible -->
+                <div class="form-section">
+                    <h1>Informations de Livraison</h1>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adresse:</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville:</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postal-code">Code postal:</label>
+                            <input type="text" id="postal-code" name="postal-code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Pays:</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                         <button type="submit" id="payment-button" class="generate-btn">Procéder au paiement</button> 
+                    </form>
+                </div>
+                
+                <!-- Cette section est toujours visible -->
+                <div class="form-section">
+                    <h1>Résumé du Panier</h1>
+                    <div id="cart-summary">
+                        <!-- Résumé du panier sera dynamiquement ajouté ici -->
+                        <p id="emptyCartMessage">Votre panier est vide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contactez-nous</h4>
+                <p> 01 23 45 67 89</p>
+                <p> contact@generateur-etiquettes.fr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informations Légales</h4>
+                <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="login-popup-container"></div>
+
+
+    <script type="module" src="/js/header.js"></script>
+    <script type="module" src="/js/checkout.js"></script>
+    <script type="module" src="/js/toast.js"></script>
+</body>
+</html>

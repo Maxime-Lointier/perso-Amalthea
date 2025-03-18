@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panier - Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/panier.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="pageContent">
+        <nav id="header">
+            <div class="nav-items">
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-profile">
+                <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+                <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+            </div>
+        </nav>
+
+        <div class="container cart">
+            <h1>Votre Panier</h1>
+
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be dynamically populated here -->
+                <p id="emptyCartMessage">Votre panier est vide.</p>
+            </div>
+
+            <div id="cartSummary" class="cart-summary" style="display:none;">
+                <h2>Résumé du Panier</h2>
+                <div class="cart-total">
+                    <strong>Total:</strong> <span id="cartTotal">0€</span>
+                </div>
+                <button id="checkoutBtn" class="generate-btn">Procéder au Paiement</button>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contactez-nous</h4>
+                <p> 01 23 45 67 89</p>
+                <p> contact@generateur-etiquettes.fr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informations Légales</h4>
+                <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+    <div id="login-popup-container"></div>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/panier.js"></script>
+    <script type="module" src="/js/login-popup.js"></script>
+    <script type="module" src="/js/header.js"></script>
+    <script type="module" src="/js/toast.js"></script>
+</body>
+
+</html>

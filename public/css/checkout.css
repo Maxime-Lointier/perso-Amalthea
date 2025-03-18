@@ -1,0 +1,409 @@
+/* Style de base pour le conteneur */
+.container.checkout {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    width: 80%; /* Ajouter une largeur pour permettre une augmentation proportionnelle */
+}
+
+/* Version BEAUCOUP plus grande lorsque l'utilisateur n'est pas connecté */
+.container.checkout.guest-mode {
+    max-width: 1500px; /* Maintenir la largeur maximale de 1500px */
+    width: 95%; /* Presque toute la largeur de l'écran */
+}
+
+/* En mode invité, utiliser 3 colonnes et augmenter l'écart */
+.guest-mode .checkout-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px; /* Augmenter significativement l'écart entre les colonnes */
+}
+
+/* En mode connecté, garder 2 colonnes */
+.checkout-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Augmentation des éléments intérieurs en mode invité */
+.guest-mode .form-section {
+    padding: 30px; /* Padding encore plus grand */
+    min-height: 600px; /* Hauteur minimale augmentée */
+    width: auto; /* Laisser la largeur s'adapter naturellement */
+}
+
+/* Style de base pour les sections de formulaire */
+.form-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Agrandir les titres en mode invité */
+.guest-mode h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 1.1em;
+}
+
+/* Augmenter l'espacement des groupes de formulaires en mode invité */
+.guest-mode .form-group {
+    margin-bottom: 25px; /* Plus d'espace entre les champs */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Augmenter la taille des étiquettes de formulaire en mode invité */
+.guest-mode label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Agrandir les formulaires dans chaque section en mode invité */
+.guest-mode input, 
+.guest-mode select, 
+.guest-mode textarea {
+    padding: 12px; /* Champs de saisie plus grands */
+    font-size: 1.05em; /* Police plus grande */
+}
+
+.generate-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* MODIFICATION: Réduire la taille des boutons en mode invité */
+.guest-mode .generate-btn,
+.guest-mode button {
+    padding: 10px; /* Réduire à la taille standard */
+    font-size: 1em; /* Réduire la taille de police */
+}
+
+/* MODIFICATION: Adapter spécifiquement le bouton de paiement */
+.guest-mode .generate-btn {
+    padding: 10px; /* Taille standard */
+    font-size: 1em; /* Taille de police standard */
+    margin-top: 20px; /* Un peu plus d'espace au-dessus */
+}
+
+.generate-btn:hover {
+    background-color: #2980b9;
+}
+
+#cart-summary {
+    max-height: 420px; /* Hauteur fixe comme avant */
+    overflow-y: auto; /* Défilement uniquement pour le conteneur principal */
+    text-align: left;
+    position: relative; /* Pour le positionnement des éléments internes */
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 0; /* Supprimer le padding par défaut */
+}
+
+/* Augmenter la taille du récapitulatif du panier en mode invité */
+.guest-mode #cart-summary {
+    max-height: 600px; /* Plus d'espace vertical */
+    overflow-y: auto; /* Défilement si nécessaire */
+    padding-right: 10px; /* Espace pour la barre de défilement */
+}
+
+/* Agrandir les prévisualisations dans le récapitulatif du panier */
+#cart-summary .preview-thumbnail {
+    max-width: 200px; /* Double de la taille actuelle (100px) */
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ajustement pour que les images plus grandes ne débordent pas */
+#cart-summary .item-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden; /* Éviter les débordements */
+}
+
+#cart-summary p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+#emptyCartMessage {
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Ajouter ces styles à la fin du fichier checkout.css */
+
+/* Style spécifique pour les prévisualisations dans le checkout */
+.item-preview {
+    margin: 8px 0;
+    padding: 4px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Taille réduite spécifiquement pour le checkout */
+.item-preview .preview-thumbnail {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* Agrandir la prévisualisation des étiquettes en mode invité */
+.guest-mode .item-preview .preview-thumbnail {
+    max-width: 120px; /* Plus grand que les 80px habituels */
+    max-height: 120px;
+}
+
+/* Ajuster la taille des logos également dans le checkout */
+.logo-container {
+    margin: 8px 0;
+    padding: 4px;
+}
+
+.logo-container .pharmacy-logo {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+/* Améliorer la mise en page des éléments du panier */
+.cart-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+/* Améliorer la mise en page des éléments du panier en mode invité */
+.guest-mode .cart-item {
+    margin-bottom: 20px; /* Plus d'espace entre les articles */
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.cart-item-details {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Ajuster l'espacement du texte pour le mode invité */
+.guest-mode .cart-item-details {
+    font-size: 1.05em; /* Texte légèrement plus grand */
+    line-height: 1.6;
+}
+
+/* Style pour le bouton supprimer pour qu'il soit bien aligné */
+.cart-item .remove-item {
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+/* Styles pour l'indicateur de chargement */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-indicator {
+    transition: background-color 0.5s ease;
+}
+
+/* Adapter le bouton de paiement en mode invité */
+.guest-mode .generate-btn {
+    padding: 12px; /* Bouton plus grand */
+    font-size: 1.05em; /* Texte plus grand */
+}
+
+/* Agrandir les sous-titres en mode invité */
+.guest-mode h2, 
+.guest-mode h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Ajouter une transition fluide lors du changement de mode */
+.form-section, .cart-item, .item-preview, .generate-btn {
+    transition: all 0.3s ease;
+}
+
+/* Style spécifique pour le bouton d'inscription qui le différencie des autres */
+.guest-mode #register-btn {
+    background-color: #27ae60; /* Vert au lieu du bleu habituel */
+    color: white;
+    font-weight: bold;
+    padding: 12px 15px; /* Un peu plus grand que les autres boutons */
+    border-radius: 6px; /* Coins plus arrondis */
+    box-shadow: 0 4px 6px rgba(39, 174, 96, 0.2); /* Ombre légère verte */
+    position: relative; /* Pour l'effet hover */
+    overflow: hidden; /* Pour l'effet hover */
+    transition: all 0.3s ease;
+    margin-top: 25px; /* Plus d'espace au-dessus */
+    margin-bottom: 10px; /* Un peu d'espace en dessous */
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 1px; /* Espacement des lettres */
+}
+
+/* Effet de survol pour le bouton d'inscription */
+.guest-mode #register-btn:hover {
+    background-color: #219955; /* Vert plus foncé au survol */
+    box-shadow: 0 6px 8px rgba(39, 174, 96, 0.3); /* Ombre plus prononcée */
+    transform: translateY(-2px); /* Léger effet de soulèvement */
+}
+
+/* Effet lors du clic pour le bouton d'inscription */
+.guest-mode #register-btn:active {
+    transform: translateY(1px); /* Effet d'enfoncement */
+    box-shadow: 0 2px 3px rgba(39, 174, 96, 0.2); /* Ombre réduite */
+}
+
+/* Style pour le bouton "Déjà un compte?" pour le distinguer également */
+.guest-mode #switch-to-login {
+    background-color: transparent; /* Fond transparent */
+    color: #3498db; /* Couleur bleue du texte */
+    border: 1px solid #3498db; /* Bordure bleue */
+    font-weight: normal; /* Police normale */
+    padding: 8px 10px; /* Plus petit que les autres boutons */
+    margin-top: 10px; /* Moins d'espace au-dessus */
+    font-size: 0.9em; /* Texte légèrement plus petit */
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol pour le bouton "Déjà un compte?" */
+.guest-mode #switch-to-login:hover {
+    background-color: #f0f8ff; /* Fond bleu très pâle au survol */
+    color: #2980b9; /* Bleu plus foncé */
+}
+
+/* Ajouter un effet spécifique au bouton de paiement */
+.guest-mode #payment-button {
+    background-color: #3498db; /* Couleur bleue habituelle */
+    font-weight: bold; /* Police plus grasse */
+}
+
+/* Effet de survol pour le bouton de paiement */
+.guest-mode #payment-button:hover {
+    background-color: #2980b9; /* Bleu plus foncé au survol */
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2); /* Légère ombre bleue */
+}
+
+/* Ajouter ces styles pour le prix total en haut */
+.cart-summary-header {
+    position: sticky;  /* Rendre l'en-tête collant */
+    top: 0;            /* Coller en haut */
+    z-index: 10;       /* S'assurer qu'il reste au-dessus des autres éléments */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white; /* Modifier pour correspondre au fond du cart-summary */
+    border-bottom: 1px solid #eee;
+    margin: 0; /* Supprimer toutes les marges */
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* S'assurer qu'il prend toute la largeur */
+}
+
+.cart-summary-header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    line-height: normal;
+}
+
+.cart-total-top {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* En mode invité, rendre le total plus visible */
+.guest-mode .cart-total-top {
+    font-size: 1.4em;
+    padding: 10px 18px;
+    background-color: #e9f7fe;
+    border: 1px solid #bde2f7;
+}
+
+/* Ajuster le contenu du panier pour qu'il commence après l'en-tête */
+#cart-summary .cart-items-container {
+    overflow-y: visible; /* Désactiver le défilement séparé */
+    padding: 10px;
+    margin-top: 0; /* Pas de marge en haut */
+}
+
+.guest-mode #cart-summary .cart-items-container {
+    max-height: 560px;
+}
+
+/* Éviter les problèmes de padding/margin qui peuvent créer des barres de défilement */
+#cart-summary, #cart-summary * {
+    box-sizing: border-box;
+}

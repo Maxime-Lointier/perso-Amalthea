@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Générateur d'Étiquettes Pharmacie</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/accueil.css">
+    <link rel="stylesheet" href="/css/login-popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav id="header">
+        <div class="nav-items">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="generateur.html">Produit</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-profile">
+            <a href="panier.html" id="cart-link"><img src="/images/icons/panier.svg" alt="Panier"></a>
+            <a href="#" id="profile-link"><img src="/images/icons/profil.svg" alt="Profil"></a>
+        </div>
+    </nav>
+    <div class="container home">
+
+        <div class="hero-banner">
+            <h1>Générez vos étiquettes pharmaceutiques en quelques clics</h1>
+            <p class="tagline">Gain de temps et professionnalisme pour votre officine</p>
+            <a href="generateur.html" class="cta-btn">Essayer maintenant</a>
+        </div>
+
+        <div class="home-content">
+
+
+            <div class="process-section">
+                <h2>Simple comme bonjour</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Personnalisez</h3>
+                        <p>Ajoutez vos informations et choisissez votre format</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Prévisualisez</h3>
+                        <p>Vérifiez le rendu de votre étiquette</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Commandez</h3>
+                        <p>Recevez vos étiquettes prêtes à l'emploi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contactez-nous</h4>
+                <p> 01 23 45 67 89</p>
+                <p> contact@generateur-etiquettes.fr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="generateur.html">Produit</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informations Légales</h4>
+                <p> 2024 Générateur d'Étiquettes Pharmacie</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="login-popup-container"></div>
+
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/login-popup.js"></script>
+    <script type="module" src="/js/header.js"></script>
+</body>
+
+</html>
